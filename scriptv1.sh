@@ -56,7 +56,8 @@ metadata:
 
 managedNodeGroups:
 - name: nodegroup
-  desiredCapacity: 3
+  instanceType: c5.xlarge
+  desiredCapacity: 2
   iam:
     withAddonPolicies:
       albIngress: true
