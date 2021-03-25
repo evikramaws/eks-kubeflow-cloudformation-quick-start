@@ -18,6 +18,7 @@ eksctl scale nodegroup --cluster ${AWS_CLUSTER_NAME} --name $NODEGROUP_NAME --no
 #curl --silent --location "https://github.com/kubeflow/kfctl/releases/download/v1.0.1/kfctl_v1.0.1-0-gf3edb9b_linux.tar.gz" | tar xz -C /tmp
 
 curl --silent --location "https://kubeflow-aws.s3-us-west-2.amazonaws.com/kfctl/linux/kfctl_v1.0.2-1-g93e95e1_linux.tar.gz" | tar xz -C /tmp
+curl --silent --location "https://github.com/kubeflow/kfctl/releases/download/v1.2.0/kfctl_v1.2.0-0-gbc038f9_linux.tar.gz" | tar xz -C /tmp
 
 sudo cp -v /tmp/kfctl /usr/local/bin
 
@@ -29,7 +30,7 @@ export BASE_DIR=/home/ec2-user/environment
 export KF_DIR=\${BASE_DIR}/\${KF_NAME}
 
 # export CONFIG_URI="https://raw.githubusercontent.com/kubeflow/manifests/v1.0-branch/kfdef/kfctl_aws_cognito.v1.0.1.yaml"
-export CONFIG_URI="https://raw.githubusercontent.com/kubeflow/manifests/v1.0-branch/kfdef/kfctl_aws.v1.0.1.yaml"
+export CONFIG_URI="https://raw.githubusercontent.com/kubeflow/manifests/v1.2-branch/kfdef/kfctl_aws.v1.2.0.yaml"
 
 export CONFIG_FILE=\${KF_DIR}/kfctl_aws.yaml
 EoF
