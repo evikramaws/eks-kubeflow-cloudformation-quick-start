@@ -61,7 +61,6 @@ managedNodeGroups:
   iam:
     withAddonPolicies:
       albIngress: true
-availabilityZones: ['us-east-1a', 'us-east-1b']
 
 secretsEncryption:
   keyARN: ${MASTER_ARN}
