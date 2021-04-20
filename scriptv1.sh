@@ -8,14 +8,14 @@ export AWS_REGION=$(curl -s 169.254.169.254/latest/dynamic/instance-identity/doc
 
 CLUSTER_RAND=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 13 ; echo '')
 
-export AWS_CLUSTER_NAME=eksworkshop-$CLUSTER_RAND
+export AWS_CLUSTER_NAME=eks-dotdeploy-$CLUSTER_RAND
 
 aws configure set default.region ${AWS_REGION}
 #aws configure set aws_output json
 
-sudo curl --silent --location -o /usr/local/bin/kubectl https://amazon-eks.s3-us-west-2.amazonaws.com/1.14.6/2019-08-22/bin/linux/amd64/kubectl
+sudo curl --silent --location -o /usr/local/bin/kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.18.9/2020-11-02/bin/linux/amd64/kubectl
 sudo chmod +x /usr/local/bin/kubectl
-sudo curl --silent --location -o /usr/local/bin/aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazonaws.com/1.15.10/2020-02-22/bin/linux/amd64/aws-iam-authenticator
+sudo curl --silent --location -o /usr/local/bin/aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazonaws.com/1.19.6/2021-01-05/bin/linux/amd64/aws-iam-authenticator
 sudo chmod +x /usr/local/bin/aws-iam-authenticator
 
 /usr/local/bin/kubectl completion bash >>  ~/.bash_completion
